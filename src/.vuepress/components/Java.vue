@@ -60,6 +60,11 @@ export default {
   watch: {
     '$route': 'updateQueryParams'
   },
+  computed: {
+    currentVersion() {
+      return this.getVersion(this.major);
+    }
+  },
   methods: {
     updateQueryParams() {
       const {major, system, arch} = this.$route.query;
@@ -69,8 +74,16 @@ export default {
       return versionMap.get(version);
     },
     download(version, arch, system) {
+      let fix;
+      if (system === "windows") {
+        fix = "msi"
+      } else if (system === "macos") {
+        fix = "pkg"
+      } else {
+        fix = "tar.gz"
+      }
       const link = document.createElement('a');
-      link.href = `https://download.bell-sw.com/java/${version}/bellsoft-jre${version}-${system}-${arch}-full.msi`;
+      link.href = `https://download.bell-sw.com/java/${version}/bellsoft-jre${version}-${system}-${arch}-full.${fix}`;
       link.click()
     }
   }
