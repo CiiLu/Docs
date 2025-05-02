@@ -14,6 +14,7 @@ export default defineUserConfig({
     theme,
     alias: {
         "@JavaComponent": path.resolve(__dirname, "components/Java.vue"),
+        "@OptifineComponent": path.resolve(__dirname, "components/Optifine.vue"),
     },
     head: [
         [
