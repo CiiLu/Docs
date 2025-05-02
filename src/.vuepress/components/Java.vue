@@ -39,7 +39,6 @@
 </template>
 
 <script>
-import {} from "sober"
 const versionMap = new Map([
   ["21", "21.0.7+9"],
   ["17", "17.0.15+10"],
