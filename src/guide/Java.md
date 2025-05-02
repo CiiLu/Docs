@@ -7,3 +7,4 @@ import Java from "@JavaComponent";
 </script>
 
 <Java></Java>
+
