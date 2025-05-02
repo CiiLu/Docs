@@ -7,6 +7,10 @@ settings:
 importers:
 
   .:
+    dependencies:
+      sober:
+        specifier: ^1.1.1
+        version: 1.1.1
     devDependencies:
       '@vuepress/bundler-webpack':
         specifier: 2.0.0-rc.22
@@ -3004,6 +3008,9 @@ packages:
   slash@5.1.0:
     resolution: {integrity: sha512-ZA6oR3T/pEyuqwMgAKT0/hAv8oAXckzbkmR0UkUosQ+Mc4RxGoJkRmwHgHufaenlyAgE1Mxgpdcrf75y6XcnDg==}
     engines: {node: '>=14.16'}
+
+  sober@1.1.1:
+    resolution: {integrity: sha512-RZiX5NpPGQMt5UMzqutx7OsYzvjMObfN8BZAN8PGXe9gA6zhwsF0/8o6eUkLbJifYveUePkfru97poO/CIp9dg==}
 
   sockjs@0.3.24:
     resolution: {integrity: sha512-GJgLTZ7vYb/JtPSSZ10hsOYIvEYsjbNU+zPdIHcUaWVNUEPivzxku31865sSSud0Da0W4lEeOPlmw93zLQchuQ==}
@@ -6721,6 +6728,8 @@ snapshots:
       sax: 1.4.1
 
   slash@5.1.0: {}
+
+  sober@1.1.1: {}
 
   sockjs@0.3.24:
     dependencies:

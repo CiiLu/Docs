@@ -1,16 +1,20 @@
-import { defineUserConfig } from "vuepress";
+import {defineUserConfig} from "vuepress";
 
 import theme from "./theme.js";
+import {getDirname, path} from "vuepress/utils";
+
+const __dirname = getDirname(import.meta.url);
 
 export default defineUserConfig({
-  base: "/",
+    base: "/",
 
-  lang: "zh-CN",
-  title: "杂物间",
-  description: "杂七杂八的东西",
+    lang: "zh-CN",
+    title: "杂物间",
+    description: "杂七杂八的东西",
 
-  theme,
-
-  // 和 PWA 一起启用
-  // shouldPrefetch: false,
+    theme,
+    alias: {
+        "@JavaComponent": path.resolve(__dirname, "components/Java.vue"),
+    }
 });
+
