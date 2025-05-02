@@ -1,6 +1,6 @@
 ---
 icon: book
-title: 文档
+title: 引导
 index: false
 ---
 
