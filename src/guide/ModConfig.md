@@ -24,7 +24,7 @@ onMounted(() => {
   getUrlParams();
 });
 </script>
-你的游戏因为 有模组的配置文件损坏 崩溃。
+你的游戏因为 **有模组的配置文件损坏** 而崩溃。
 打开 **版本管理** 页面，
 <img src="/assets/image/版本管理.png">
 
