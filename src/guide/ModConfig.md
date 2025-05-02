@@ -41,7 +41,7 @@ onMounted(() => {
 
 打开其中的 `serverconfig` 文件夹
 
-<img src="/assets/image/serverconfig文件夹.png">
+<img src="/assets/image/ServerConfig文件夹.png">
 
 然后删除配置文件 **{{file}}** 即可
 :::
