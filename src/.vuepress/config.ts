@@ -20,7 +20,7 @@ export default defineUserConfig({
         [
             'script',
             {
-                src: 'https://unpkg.com/sober@1.1.0/dist/sober.min.js'
+                src: 'https://s4.zstatic.net/npm/sober@1.1.0/dist/sober.min.js'
             }
         ]
     ]
