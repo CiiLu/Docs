@@ -32,14 +32,14 @@
       </s-table>
       <s-snackbar slot="action" type="success">
         <s-button @click="download(getVersion(major),arch,system)" slot="trigger">下载</s-button>
-        Message
+        下载已开始
       </s-snackbar>
     </s-card>
   </div>
 </template>
 
 <script>
-
+import {} from "sober"
 const versionMap = new Map([
   ["21", "21.0.7+9"],
   ["17", "17.0.15+10"],
