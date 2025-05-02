@@ -16,14 +16,12 @@ export default defineUserConfig({
     alias: {
         "@JavaComponent": path.resolve(__dirname, "components/Java.vue"),
     },
-    bundler: webpackBundler({
-        configureWebpack: (config, isServer) => {
-            if (isServer) {
-                config.externals = {
-                    'sober': 'commonjs sober',
-                }
+    head: [
+        [
+            'script',
+            {
+                src: 'https://unpkg.com/sober@1.1.0/dist/sober.min.js'
             }
-        },
-    }),
+        ]
+    ]
 });
-
