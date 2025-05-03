@@ -3,24 +3,35 @@ icon: sun
 title: 重装 Java 引导页
 ---
 
-<script setup>
-import { ref, onMounted } from 'vue';
+<script setup>import {onMounted, ref} from 'vue'; 
 import Java from '@JavaComponent'; 
-
 const arch = ref('');
 const system = ref('');
 
 async function getUserAgentInfo() {
-    const d = await navigator.userAgentData.getHighEntropyValues([
-      'architecture'
-    ]);
-    
-    if (d.architecture === 'x86') {
-      arch.value = 'amd64';
-    } else {
-      arch.value = "aarch64";
+    if(navigator.userAgentData !== undefined){
+        const d = await navigator.userAgentData.getHighEntropyValues([
+          'architecture'
+        ]);
+        
+        if (d.architecture === 'x86') {
+          arch.value = 'amd64';
+        } else {
+          arch.value = "aarch64";
+        }
+        system.value = d.platform.toLowerCase();
+    }else {
+        if(navigator.userAgent.includes("Windows")) {
+            system.value = "windows"
+        }else if(navigator.userAgent.includes("Mac")) {
+            system.value = "macos"
+        }else {
+            system.value = "linux"
+        }
+        arch.value = "amd64"
     }
-    system.value = d.platform.toLowerCase();
+
+
 }
 
 onMounted(() => {
