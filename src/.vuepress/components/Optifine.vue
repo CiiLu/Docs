@@ -1,5 +1,5 @@
 <template>
-  <div v-if="mcVersion==null">
+  <div v-if="mc==null">
     <s-card style="min-width: 500px;max-width: none;" clickable="false">
       <div slot="headline">错误</div>
       <div slot="text">缺少参数</div>
@@ -8,7 +8,7 @@
   <div v-else>
     <s-card style="height:280px;min-width: 500px;overflow: auto;max-width: none;padding: 10px" clickable="false">
       <div slot="headline">Optifine Forge 版本对照表</div>
-      <div slot="subhead">MC 版本：{{ mcVersion }}</div>
+      <div slot="subhead">MC 版本：{{ mc }}</div>
       <s-table style="overflow: auto; display: block">
         <s-thead>
           <s-tr>
@@ -31,13 +31,13 @@
 export default {
   data() {
     return {
-      mcVersion: null,
+      mc: null,
       items: []
     };
   },
   created() {
     this.updateQueryParams();
-    fetch(`https://api.codetabs.com/v1/proxy?quest=https://bmclapi2.bangbang93.com/optifine/${this.mcVersion}`) // 替换为你的API端点
+    fetch(`https://api.codetabs.com/v1/proxy?quest=https://bmclapi2.bangbang93.com/optifine/${this.mc}`) // 替换为你的API端点
         .then(response => response.json())
         .then(data => {
           this.items = data;
@@ -51,8 +51,8 @@ export default {
   },
   methods: {
     updateQueryParams() {
-      const {mcVersion} = this.$route.query;
-      Object.assign(this, {mcVersion});
+      const {mc} = this.$route.query;
+      Object.assign(this, {mc: mc});
     }
   }
 };
