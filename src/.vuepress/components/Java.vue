@@ -1,5 +1,5 @@
 <template>
-  <div v-if="major==null||system==null||arch==null">
+  <div v-if="resolvedMajor == null || resolvedSystem == null || resolvedArch == null">
     <s-card style="min-width: 500px;max-width: none;" clickable="false">
       <div slot="headline">错误</div>
       <div slot="text">缺少参数</div>
@@ -18,20 +18,20 @@
         <s-tbody>
           <s-tr>
             <s-td>Java 版本</s-td>
-            <s-td>{{ getVersion(major) }}</s-td>
+            <s-td>{{ currentVersion }}</s-td>
           </s-tr>
           <s-tr>
             <s-td>系统架构</s-td>
-            <s-td>{{ arch }}</s-td>
+            <s-td>{{ resolvedArch }}</s-td>
           </s-tr>
           <s-tr>
             <s-td>操作系统</s-td>
-            <s-td>{{ system }}</s-td>
+            <s-td>{{ resolvedSystem }}</s-td>
           </s-tr>
         </s-tbody>
       </s-table>
       <s-snackbar slot="action" type="success">
-        <s-button @click="download(getVersion(major),arch,system)" slot="trigger">下载</s-button>
+        <s-button @click="download" slot="trigger">下载</s-button>
         下载已开始
       </s-snackbar>
     </s-card>
@@ -46,45 +46,54 @@ const versionMap = new Map([
   ["11", "11.0.27+9"],
   ["8", "8u452+11"]
 ]);
+
 export default {
-  data() {
-    return {
-      major: null,
-      system: null,
-      arch: null,
-    };
-  },
-  mounted() {
-    this.updateQueryParams();
-  },
-  watch: {
-    '$route': 'updateQueryParams'
+  name: "JavaDownloader",
+  props: {
+    major: {
+      type: String,
+      default: null
+    },
+    system: {
+      type: String,
+      default: null
+    },
+    arch: {
+      type: String,
+      default: null
+    }
   },
   computed: {
+    resolvedMajor() {
+      return this.major || this.$route.query.major;
+    },
+    resolvedSystem() {
+      return this.system || this.$route.query.system;
+    },
+    resolvedArch() {
+      return this.arch || this.$route.query.arch;
+    },
     currentVersion() {
-      return this.getVersion(this.major);
+      return this.getVersion(this.resolvedMajor);
     }
   },
   methods: {
-    updateQueryParams() {
-      const {major, system, arch} = this.$route.query;
-      Object.assign(this, {major, system, arch});
-    },
     getVersion(version) {
       return versionMap.get(version);
     },
-    download(version, arch, system) {
+    download() {
       let fix;
-      if (system === "windows") {
-        fix = "msi"
-      } else if (system === "macos") {
-        fix = "pkg"
+      if (this.resolvedSystem === "windows") {
+        fix = "msi";
+      } else if (this.resolvedSystem === "macos") {
+        fix = "pkg";
       } else {
-        fix = "tar.gz"
+        fix = "tar.gz";
       }
-      const link = document.createElement('a');
-      link.href = `https://download.bell-sw.com/java/${version}/bellsoft-jre${version}-${system}-${arch}-full.${fix}`;
-      link.click()
+
+      const link = document.createElement("a");
+      link.href = `https://download.bell-sw.com/java/${this.getVersion(this.resolvedMajor)}/bellsoft-jre${this.getVersion(this.resolvedMajor)}-${this.resolvedSystem}-${this.resolvedArch}-full.${fix}`;
+      link.click();
     }
   }
 };
