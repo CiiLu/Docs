@@ -37,7 +37,7 @@ export default {
   },
   created() {
     this.updateQueryParams();
-    fetch(`https://api.codetabs.com/v1/proxy?quest=https://bmclapi2.bangbang93.com/optifine/${this.mc}`) // 替换为你的API端点
+    fetch(`https://api.codetabs.com/v1/proxy?quest=https://bmclapi2.bangbang93.com/optifine/${this.mc}`)
         .then(response => response.json())
         .then(data => {
           this.items = data;
