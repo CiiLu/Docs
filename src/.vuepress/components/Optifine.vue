@@ -6,7 +6,7 @@
     </s-card>
   </div>
   <div v-else>
-    <s-card style="height:280px;min-width: 500px;max-width: none;padding: 10px" clickable="false">
+    <s-card style="height:280px;min-width: 500px;overflow: auto;max-width: none;padding: 10px" clickable="false">
       <div slot="headline">Optifine Forge 版本对照表</div>
       <div slot="subhead">MC 版本：{{ mcVersion }}</div>
       <s-table style="overflow: auto; display: block">
