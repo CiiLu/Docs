@@ -7,7 +7,6 @@ title: 重装 Java 引导页
 import Java from '@JavaComponent'; 
 const arch = ref('');
 const system = ref('');
-
 async function getUserAgentInfo() {
     if(navigator.userAgentData !== undefined){
         const d = await navigator.userAgentData.getHighEntropyValues([
