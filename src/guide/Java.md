@@ -38,6 +38,9 @@ onMounted(() => {
 <img src="/assets/image/MacJava安装第四步.png" width="400">
 :::
 
+安装完之后，在启动器内更换 Java
+
+::: details HMCL 更换教程
 安装完之后，**重启启动器**，然后打开 **版本管理** 页面，
 <img src="/assets/image/版本管理.png">
 把上面的勾**勾选上**，
@@ -45,3 +48,15 @@ onMounted(() => {
 然后点击展开 **“Java 路径”** 项，选择 **{{javaVersion}}** 版本
 <img src="/assets/image/选中版本.png">
 再次启动游戏即可。
+:::
+
+::: details PCL2 更换教程
+在 **设置页 -> 游戏 -> 启动选项卡片** 最下方找到 `自动搜索` 按钮
+<img src="/assets/image/PCLJava第一步.png">
+点击进行搜索 （如果有 `深度搜索` 选项勾选上）
+
+回到 **主页** 点击 **版本设置** 按钮
+<img src="/assets/image/PCLJava第二步.png">
+在 **设置页 -> 设置 -> 启动选项** 中选择游戏 Java 为 **{{javaVersion}}** 版本
+<img src="/assets/image/PCLJava第三步.png">
+:::
