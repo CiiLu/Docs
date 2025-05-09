@@ -3,7 +3,7 @@ home: true
 index: false
 icon: house
 title: 项目主页
-heroText: 杂物间
+heroText: Guide
 tagline: 杂七杂八的东西
 actions:
   - text: 随便逛逛

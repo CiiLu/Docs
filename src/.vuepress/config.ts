@@ -8,7 +8,7 @@ export default defineUserConfig({
     base: "/",
 
     lang: "zh-CN",
-    title: "杂物间",
+    title: "Guide",
     description: "杂七杂八的东西",
     clientConfigFile: path.resolve(__dirname, './client.ts'),
     theme,
