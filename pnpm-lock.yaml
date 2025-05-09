@@ -11,6 +11,9 @@ importers:
       '@vercel/analytics':
         specifier: ^1.5.0
         version: 1.5.0(vue-router@4.5.1(vue@3.5.13))(vue@3.5.13)
+      vuepress-plugin-remove-html-extension:
+        specifier: ^1.19.0
+        version: 1.19.0
     devDependencies:
       '@vuepress/bundler-webpack':
         specifier: 2.0.0-rc.22
@@ -3400,6 +3403,10 @@ packages:
         optional: true
       sass-loader:
         optional: true
+
+  vuepress-plugin-remove-html-extension@1.19.0:
+    resolution: {integrity: sha512-F/dN+jzrzAfjOF75IEWSQT+Af2kqKG0fzQyHAju+iZozoekeVZg1p7W1qwmlXm7YPPcR/XcH/CJnw+mq4RXMNQ==}
+    engines: {node: ^16.0.0 || >=18.0.0}
 
   vuepress-shared@2.0.0-rc.85:
     resolution: {integrity: sha512-ajTV6wG7Dg5lVVsiJgNc+U9mgOE3byiC6ClxincO3XyzIio/gqSGy7MoH6Uh2OYi2LmTLJ0yw51NG4OnlSFOzA==}
@@ -7077,6 +7084,13 @@ snapshots:
       sass-loader: 16.0.5(sass-embedded@1.87.0)(webpack@5.99.7)
     transitivePeerDependencies:
       - markdown-it
+      - typescript
+
+  vuepress-plugin-remove-html-extension@1.19.0:
+    dependencies:
+      '@vuepress/core': 2.0.0-rc.22
+    transitivePeerDependencies:
+      - supports-color
       - typescript
 
   vuepress-shared@2.0.0-rc.85(vuepress@2.0.0-rc.22(@vuepress/bundler-webpack@2.0.0-rc.22)(vue@3.5.13)):
