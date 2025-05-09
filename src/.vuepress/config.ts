@@ -1,7 +1,6 @@
 import {defineUserConfig} from "vuepress";
 import theme from "./theme.js";
 import {getDirname, path} from "vuepress/utils";
-import {removeHtmlExtensionPlugin} from "vuepress-plugin-remove-html-extension";
 
 const __dirname = getDirname(import.meta.url);
 
@@ -17,7 +16,6 @@ export default defineUserConfig({
         "@JavaComponent": path.resolve(__dirname, "components/Java.vue"),
         "@OptifineComponent": path.resolve(__dirname, "components/Optifine.vue"),
     },
-    plugins: [removeHtmlExtensionPlugin()],
     head: [
         [
             'script',
