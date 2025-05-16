@@ -17,8 +17,8 @@ title: Usb EAm 使用 引导页
 <img width="500" src="/assets/image/UsbEam/UsbEam关键词.png">
 
 ::: tip
-登录账号搜索 **我的世界 登陆器API/游戏/皮肤下载**
-下载 模组/整合包 搜索 
+登录账号 / 安装游戏报错搜索 **我的世界 登陆器API/游戏/皮肤下载**
+安装 模组/整合包 报错搜索 
 **我的世界MOD optifine/fabricmc/modrinth/neoforged/minecraftforge**
 和
 **curseforge MOD 下载**
