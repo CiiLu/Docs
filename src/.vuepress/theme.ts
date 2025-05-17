@@ -5,10 +5,6 @@ import sidebar from "./sidebar.js";
 export default hopeTheme({
     hostname: "https://vuepress-theme-hope-docs-demo.netlify.app",
 
-    author: {
-        name: "cilu",
-    },
-
     logo: "https://theme-hope-assets.vuejs.press/logo.svg",
 
     repo: "Ciilu/Docs",
