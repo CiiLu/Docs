@@ -22,6 +22,14 @@ export default defineUserConfig({
             {
                 src: 'https://s4.zstatic.net/npm/sober@1.1.0/dist/sober.min.js'
             }
+        ],
+        [
+            'script',
+            {
+                defer: true,
+                src: 'https://cloud.umami.is/script.js',
+                'data-website-id': '00b6bb39-9fd2-4838-a529-128f02231104'
+            }
         ]
     ]
 });
