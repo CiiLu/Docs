@@ -4,6 +4,9 @@ title: 重新安装 Forge 引导页
 ---
 
 ::: details HMCL 重新安装教程
+**这里用 Forge 举例，NeoForge同理**
+
+
 打开 **版本管理** 页面，
 <img src="/assets/image/HMCL/版本管理.png">
 点击左侧的 **自动安装** 按钮
