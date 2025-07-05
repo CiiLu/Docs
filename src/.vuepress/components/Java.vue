@@ -1,12 +1,12 @@
 <template>
-  <div v-if="resolvedMajor == null || resolvedSystem == null || resolvedArch == null">
-    <s-card style="min-width: 500px;max-width: none;" clickable="false">
+  <div v-if="!resolvedMajor || !resolvedSystem || !resolvedArch">
+    <s-card style="min-width: 500px; max-width: none;" clickable="false">
       <div slot="headline">错误</div>
-      <div slot="text">缺少参数</div>
+      <div slot="text">缺少必要参数</div>
     </s-card>
   </div>
   <div v-else>
-    <s-card style="height:280px;min-width: 500px;max-width: none;padding: 10px" clickable="false">
+    <s-card style="height:280px; min-width: 500px; max-width: none; padding: 10px" clickable="false">
       <div slot="headline">Java 下载</div>
       <s-table style="overflow: auto; display: block">
         <s-thead>
@@ -64,21 +64,47 @@ export default {
       default: null
     }
   },
+  data() {
+    return {
+      detectedArch: "",
+      detectedSystem: ""
+    };
+  },
+  async created() {
+    await this.getUserAgentInfo();
+  },
   computed: {
     resolvedMajor() {
       return this.major || this.$route.query.major;
     },
     resolvedSystem() {
-      return this.system || this.$route.query.system;
+      return this.system || this.$route.query.system || this.detectedSystem;
     },
     resolvedArch() {
-      return this.arch || this.$route.query.arch;
+      return this.arch || this.$route.query.arch || this.detectedArch;
     },
     currentVersion() {
       return this.getVersion(this.resolvedMajor);
     }
   },
   methods: {
+    async getUserAgentInfo() {
+      if (navigator.userAgentData !== undefined) {
+        const d = await navigator.userAgentData.getHighEntropyValues(["architecture"]);
+        this.detectedArch = d.architecture === "x86" ? "amd64" : "aarch64";
+        this.detectedSystem = d.platform.toLowerCase();
+      } else {
+        const ua = navigator.userAgent;
+        if (ua.includes("Windows")) {
+          this.detectedSystem = "windows";
+        } else if (ua.includes("Mac")) {
+          this.detectedSystem = "macos";
+        } else {
+          this.detectedSystem = "linux";
+        }
+        this.detectedArch = ua.includes("Mac") ? "aarch64" : "amd64";
+      }
+    },
     getVersion(version) {
       return versionMap.get(version);
     },
@@ -93,13 +119,11 @@ export default {
       }
 
       const link = document.createElement("a");
-      link.href = `https://download.bell-sw.com/java/${this.getVersion(this.resolvedMajor)}/bellsoft-jre${this.getVersion(this.resolvedMajor)}-${this.resolvedSystem}-${this.resolvedArch}-full.${fix}`;
+      link.href = `https://download.bell-sw.com/java/${this.currentVersion}/bellsoft-jre${this.currentVersion}-${this.resolvedSystem}-${this.resolvedArch}-full.${fix}`;
       link.click();
     }
   }
 };
 </script>
 
-<style>
-
-</style>
+<style></style>
