@@ -31,7 +31,7 @@ onMounted(() => {
 在主页面，打开 **版本管理** 页面，
 <img src="/assets/image/HMCL/版本管理.png">
 在点击左边的 **浏览** 按钮，然后点击 **游戏文件夹**
-<img src="/assets/image/HMCL/版本管理.png">
+<img src="/assets/image/HMCL/游戏文件夹.png">
 :::
 
 ::: details PCL2
