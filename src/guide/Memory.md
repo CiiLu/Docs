@@ -1,4 +1,5 @@
 ---
+sidebar: false
 icon: moon
 title: 虚拟内存 引导页
 ---

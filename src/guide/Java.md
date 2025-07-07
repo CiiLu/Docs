@@ -1,4 +1,5 @@
 ---
+sidebar: false
 icon: font-awesome
 title: Java 引导页
 ---

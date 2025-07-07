@@ -1,4 +1,5 @@
 ---
+sidebar: false
 icon: font-awesome
 title: 重新安装 Forge 引导页
 ---

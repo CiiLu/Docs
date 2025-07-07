@@ -1,4 +1,5 @@
 ---
+sidebar: false
 icon: computer
 title: 前置引导页
 ---

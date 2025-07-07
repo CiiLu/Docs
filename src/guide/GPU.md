@@ -1,4 +1,5 @@
 ---
+sidebar: false
 icon: bell
 title: 截图显卡 引导页
 ---

@@ -1,4 +1,5 @@
 ---
+sidebar: false
 icon: share
 title: HMCL启动器日志 引导页
 ---

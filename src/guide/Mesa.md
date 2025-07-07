@@ -1,4 +1,5 @@
 ---
+sidebar: false
 icon: sun
 title: 软渲染 引导页
 ---

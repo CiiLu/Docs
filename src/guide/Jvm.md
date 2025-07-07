@@ -1,4 +1,5 @@
 ---
+sidebar: false
 icon: moon
 title: Java 虚拟机参数引导页
 ---

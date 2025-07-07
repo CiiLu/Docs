@@ -1,4 +1,5 @@
 ---
+sidebar: false
 icon: coins
 title: 首选 N 卡引导页
 ---

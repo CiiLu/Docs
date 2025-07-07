@@ -1,4 +1,5 @@
 ---
+sidebar: false
 icon: sun
 title: 重装 Java 引导页
 ---

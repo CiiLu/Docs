@@ -1,6 +1,6 @@
 import {hopeTheme} from "vuepress-theme-hope";
-import navbar from "./navbar.js";
-import sidebar from "./sidebar.js";
+// import navbar from "./navbar.js";
+// import sidebar from "./sidebar.js";
 
 export default hopeTheme({
     hostname: "https://vuepress-theme-hope-docs-demo.netlify.app",
@@ -10,16 +10,16 @@ export default hopeTheme({
     repo: "Ciilu/Docs",
 
     docsDir: "src",
+    //
+    // // 导航栏
+    // navbar,
+    //
+    // // 侧边栏
+    // sidebar,
 
-    // 导航栏
-    navbar,
-
-    // 侧边栏
-    sidebar,
-
-    // 页脚
-    footer: "******",
-    displayFooter: true,
+    // // 页脚
+    // footer: "******",
+    // displayFooter: true,
 
     // 多语言配置
     metaLocales: {

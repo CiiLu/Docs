@@ -1,5 +1,5 @@
 ---
-icon: wifi
+sidebar: false wifi
 title: DNS 问题 引导页
 ---
 

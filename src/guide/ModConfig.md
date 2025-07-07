@@ -1,4 +1,5 @@
 ---
+sidebar: false
 icon: cloud
 title: 模组配置文件损坏 引导页
 ---

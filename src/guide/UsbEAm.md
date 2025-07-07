@@ -1,4 +1,5 @@
 ---
+sidebar: false
 icon: lightbulb
 title: Usb EAm 使用 引导页
 ---

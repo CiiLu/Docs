@@ -1,4 +1,5 @@
 ---
+sidebar: false
 icon: bookmark
 title: SSL 错误 引导页
 ---

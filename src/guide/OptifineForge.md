@@ -1,4 +1,5 @@
 ---
+sidebar: false
 icon: music
 title: Optifine Forge 引导页
 ---

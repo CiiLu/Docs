@@ -1,4 +1,5 @@
 ---
+sidebar: false
 icon: map
 title: 本地库路径 引导页
 ---
