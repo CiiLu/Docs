@@ -37,7 +37,7 @@ export default {
   },
   created() {
     this.updateQueryParams();
-    fetch(`https://api.cors.lol/?url=https://bmclapi2.bangbang93.com/optifine/${this.mc}`)
+    fetch(`https://api.allorigins.win/raw?url=https://bmclapi2.bangbang93.com/optifine/${this.mc}`)
         .then(response => response.json())
         .then(data => {
           this.items = data;
