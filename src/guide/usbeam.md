@@ -3,7 +3,7 @@ sidebar: false
 icon: lightbulb
 title: Usb EAm 使用 引导页
 ---
-首先下载这个压缩包 https://wwid.lanzouw.com/igHUi2mhbqdc
+首先下载这个压缩包 https://www.dogfight360.com/blog/wp-content/uploads/2025/07/UsbEAm_Hosts_Editor_V4.0.3.zip
 
 然后 **解压** 后运行其中的 **UsbEAm Hosts Editor** 开头的主程序
 
